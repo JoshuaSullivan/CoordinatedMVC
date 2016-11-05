@@ -13,6 +13,13 @@
 		BC20FEC11DCD83DF00DFFBDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC20FEC01DCD83DF00DFFBDB /* Assets.xcassets */; };
 		BC20FEC41DCD83DF00DFFBDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC20FEC21DCD83DF00DFFBDB /* LaunchScreen.storyboard */; };
 		BC20FECF1DCD83DF00DFFBDB /* BeyondViewControllersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20FECE1DCD83DF00DFFBDB /* BeyondViewControllersTests.swift */; };
+		BC9DE7911DCD85D60033E3ED /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7901DCD85D60033E3ED /* Result.swift */; };
+		BC9DE7941DCD86B40033E3ED /* TaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */; };
+		BC9DE7961DCD87170033E3ED /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7951DCD87170033E3ED /* Task.swift */; };
+		BC9DE7981DCD89BA0033E3ED /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7971DCD89BA0033E3ED /* AppCoordinator.swift */; };
+		BC9DE79A1DCD89C60033E3ED /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7991DCD89C60033E3ED /* LoginCoordinator.swift */; };
+		BC9DE79C1DCD89D80033E3ED /* ForecastCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */; };
+		BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		BC20FECA1DCD83DF00DFFBDB /* BeyondViewControllersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeyondViewControllersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC20FECE1DCD83DF00DFFBDB /* BeyondViewControllersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeyondViewControllersTests.swift; sourceTree = "<group>"; };
 		BC20FED01DCD83DF00DFFBDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC9DE7901DCD85D60033E3ED /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCoordinator.swift; sourceTree = "<group>"; };
+		BC9DE7951DCD87170033E3ED /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		BC9DE7971DCD89BA0033E3ED /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		BC9DE7991DCD89C60033E3ED /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCoordinator.swift; sourceTree = "<group>"; };
+		BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +92,17 @@
 			isa = PBXGroup;
 			children = (
 				BC20FEB91DCD83DF00DFFBDB /* AppDelegate.swift */,
-				BC20FEBB1DCD83DF00DFFBDB /* ViewController.swift */,
-				BC20FEBD1DCD83DF00DFFBDB /* Main.storyboard */,
 				BC20FEC01DCD83DF00DFFBDB /* Assets.xcassets */,
-				BC20FEC21DCD83DF00DFFBDB /* LaunchScreen.storyboard */,
-				BC20FEC51DCD83DF00DFFBDB /* Info.plist */,
+				BC9DE7871DCD858F0033E3ED /* coordinators */,
+				BC9DE7881DCD858F0033E3ED /* extensions */,
+				BC9DE7891DCD858F0033E3ED /* models */,
+				BC9DE78A1DCD858F0033E3ED /* protocols */,
+				BC9DE78B1DCD858F0033E3ED /* services */,
+				BC9DE78C1DCD858F0033E3ED /* userInterfaces */,
+				BC9DE78D1DCD858F0033E3ED /* viewControllers */,
+				BC9DE78E1DCD858F0033E3ED /* viewModels */,
+				BC9DE78F1DCD858F0033E3ED /* views */,
+				BC9DE7921DCD86820033E3ED /* resources */,
 			);
 			path = BeyondViewControllers;
 			sourceTree = "<group>";
@@ -94,6 +114,87 @@
 				BC20FED01DCD83DF00DFFBDB /* Info.plist */,
 			);
 			path = BeyondViewControllersTests;
+			sourceTree = "<group>";
+		};
+		BC9DE7871DCD858F0033E3ED /* coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DE7971DCD89BA0033E3ED /* AppCoordinator.swift */,
+				BC9DE7991DCD89C60033E3ED /* LoginCoordinator.swift */,
+				BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */,
+				BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */,
+			);
+			path = coordinators;
+			sourceTree = "<group>";
+		};
+		BC9DE7881DCD858F0033E3ED /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		BC9DE7891DCD858F0033E3ED /* models */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DE7901DCD85D60033E3ED /* Result.swift */,
+				BC9DE7951DCD87170033E3ED /* Task.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		BC9DE78A1DCD858F0033E3ED /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		BC9DE78B1DCD858F0033E3ED /* services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		BC9DE78C1DCD858F0033E3ED /* userInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				BC20FEBD1DCD83DF00DFFBDB /* Main.storyboard */,
+				BC20FEC21DCD83DF00DFFBDB /* LaunchScreen.storyboard */,
+			);
+			path = userInterfaces;
+			sourceTree = "<group>";
+		};
+		BC9DE78D1DCD858F0033E3ED /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC20FEBB1DCD83DF00DFFBDB /* ViewController.swift */,
+			);
+			path = viewControllers;
+			sourceTree = "<group>";
+		};
+		BC9DE78E1DCD858F0033E3ED /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewModels;
+			sourceTree = "<group>";
+		};
+		BC9DE78F1DCD858F0033E3ED /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		BC9DE7921DCD86820033E3ED /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				BC20FEC51DCD83DF00DFFBDB /* Info.plist */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +247,7 @@
 				TargetAttributes = {
 					BC20FEB51DCD83DF00DFFBDB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 6VVBUBU9QC;
+						DevelopmentTeam = PKW9G7KJJ5;
 						ProvisioningStyle = Automatic;
 					};
 					BC20FEC91DCD83DF00DFFBDB = {
@@ -201,8 +302,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9DE7981DCD89BA0033E3ED /* AppCoordinator.swift in Sources */,
+				BC9DE7911DCD85D60033E3ED /* Result.swift in Sources */,
+				BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */,
+				BC9DE79A1DCD89C60033E3ED /* LoginCoordinator.swift in Sources */,
 				BC20FEBC1DCD83DF00DFFBDB /* ViewController.swift in Sources */,
+				BC9DE7961DCD87170033E3ED /* Task.swift in Sources */,
 				BC20FEBA1DCD83DF00DFFBDB /* AppDelegate.swift in Sources */,
+				BC9DE7941DCD86B40033E3ED /* TaskCoordinator.swift in Sources */,
+				BC9DE79C1DCD89D80033E3ED /* ForecastCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +339,7 @@
 				BC20FEBE1DCD83DF00DFFBDB /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BC20FEC21DCD83DF00DFFBDB /* LaunchScreen.storyboard */ = {
@@ -239,6 +348,7 @@
 				BC20FEC31DCD83DF00DFFBDB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -339,7 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6VVBUBU9QC;
+				DEVELOPMENT_TEAM = PKW9G7KJJ5;
 				INFOPLIST_FILE = BeyondViewControllers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hairlessape.BeyondViewControllers;
@@ -352,7 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6VVBUBU9QC;
+				DEVELOPMENT_TEAM = PKW9G7KJJ5;
 				INFOPLIST_FILE = BeyondViewControllers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hairlessape.BeyondViewControllers;
@@ -410,6 +520,7 @@
 				BC20FED51DCD83DF00DFFBDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC20FED61DCD83DF00DFFBDB /* Build configuration list for PBXNativeTarget "BeyondViewControllersTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +529,7 @@
 				BC20FED81DCD83DF00DFFBDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
