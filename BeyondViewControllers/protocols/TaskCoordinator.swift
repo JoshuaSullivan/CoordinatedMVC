@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TaskCoordinator {
+public protocol TaskCoordinator {
     /// The `Task` that this coordinator aims to coordinate.
     var task: Task { get }
     
@@ -16,6 +16,9 @@ protocol TaskCoordinator {
     var rootViewController: UIViewController { get }
     
     /// Determines whether the TaskCoordinator expects to be presented modally.
+    /// Modal tasks can "interrupt" other tasks to complete an immediately pressing
+    /// app concern, such as presenting a login screen when authentication fails or
+    /// presenting a Shopping Cart view when the user taps an appropriate button.
     var isModalTask: Bool { get }
     
     /// The task coordinator's delegate.
@@ -31,7 +34,7 @@ protocol TaskCoordinator {
 }
 
 /// A `TaskCoordinatorDelegate` receives notifications that a `TaskCoordinator` has completed or that a different `TaskCoordinator` is needed to continue the user's flow through the app.
-protocol TaskCoordinatorDelegate: class {
+public protocol TaskCoordinatorDelegate: class {
     
     /// The task coordinator concluded successfully.
     func taskCoordinator(finished taskCoordinator: TaskCoordinator)

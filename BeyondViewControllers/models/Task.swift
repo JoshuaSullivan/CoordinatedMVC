@@ -11,9 +11,6 @@ import Swift
 /// An enumeration of the various user tasks that compose this app.
 public enum Task {
     
-    /// Establish user authentication.
-    case login
-    
     /// Get a current weather forecast.
     case forecast
     

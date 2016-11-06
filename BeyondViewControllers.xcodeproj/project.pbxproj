@@ -13,11 +13,11 @@
 		BC20FEC11DCD83DF00DFFBDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC20FEC01DCD83DF00DFFBDB /* Assets.xcassets */; };
 		BC20FEC41DCD83DF00DFFBDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC20FEC21DCD83DF00DFFBDB /* LaunchScreen.storyboard */; };
 		BC20FECF1DCD83DF00DFFBDB /* BeyondViewControllersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20FECE1DCD83DF00DFFBDB /* BeyondViewControllersTests.swift */; };
+		BC6360481DCFAC5D00F902A0 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6360471DCFAC5D00F902A0 /* ForecastViewModel.swift */; };
 		BC9DE7911DCD85D60033E3ED /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7901DCD85D60033E3ED /* Result.swift */; };
 		BC9DE7941DCD86B40033E3ED /* TaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */; };
 		BC9DE7961DCD87170033E3ED /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7951DCD87170033E3ED /* Task.swift */; };
 		BC9DE7981DCD89BA0033E3ED /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7971DCD89BA0033E3ED /* AppCoordinator.swift */; };
-		BC9DE79A1DCD89C60033E3ED /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7991DCD89C60033E3ED /* LoginCoordinator.swift */; };
 		BC9DE79C1DCD89D80033E3ED /* ForecastCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */; };
 		BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */; };
 		BC9DE7A01DCE15810033E3ED /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79F1DCE15810033E3ED /* APIClient.swift */; };
@@ -45,11 +45,11 @@
 		BC20FECA1DCD83DF00DFFBDB /* BeyondViewControllersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeyondViewControllersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC20FECE1DCD83DF00DFFBDB /* BeyondViewControllersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeyondViewControllersTests.swift; sourceTree = "<group>"; };
 		BC20FED01DCD83DF00DFFBDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC6360471DCFAC5D00F902A0 /* ForecastViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		BC9DE7901DCD85D60033E3ED /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCoordinator.swift; sourceTree = "<group>"; };
 		BC9DE7951DCD87170033E3ED /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		BC9DE7971DCD89BA0033E3ED /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		BC9DE7991DCD89C60033E3ED /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCoordinator.swift; sourceTree = "<group>"; };
 		BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCoordinator.swift; sourceTree = "<group>"; };
 		BC9DE79F1DCE15810033E3ED /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				BC9DE7971DCD89BA0033E3ED /* AppCoordinator.swift */,
-				BC9DE7991DCD89C60033E3ED /* LoginCoordinator.swift */,
 				BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */,
 				BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */,
 			);
@@ -184,6 +183,7 @@
 		BC9DE78E1DCD858F0033E3ED /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
+				BC6360471DCFAC5D00F902A0 /* ForecastViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -312,9 +312,9 @@
 				BC9DE7911DCD85D60033E3ED /* Result.swift in Sources */,
 				BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */,
 				BC9DE7A01DCE15810033E3ED /* APIClient.swift in Sources */,
-				BC9DE79A1DCD89C60033E3ED /* LoginCoordinator.swift in Sources */,
 				BC9DE7A21DCE16D40033E3ED /* APIClientService.swift in Sources */,
 				BC20FEBC1DCD83DF00DFFBDB /* ViewController.swift in Sources */,
+				BC6360481DCFAC5D00F902A0 /* ForecastViewModel.swift in Sources */,
 				BC9DE7961DCD87170033E3ED /* Task.swift in Sources */,
 				BC20FEBA1DCD83DF00DFFBDB /* AppDelegate.swift in Sources */,
 				BC9DE7941DCD86B40033E3ED /* TaskCoordinator.swift in Sources */,

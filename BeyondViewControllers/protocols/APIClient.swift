@@ -12,14 +12,15 @@ public typealias JSONDictionary = [String : Any]
 
 /// In a real API Client, this would have all the different error conditions.
 public enum APIClientError: Error {
-    case generalFailure
+    case requestFailed
+    case jsonParsingFailed
 }
 
 public protocol APIClient {
     
     /// The APIClient returns its success or failure in a Result enum.
-    typealias APIRequestCompletion<T> = (Result<T, APIClientError>) -> Void
+    typealias APIRequestCompletion = (Result<JSONDictionary, APIClientError>) -> Void
     
     /// This form of the send method returns a single object of type `ReturnType`.
-    func send<ReturnType>(request: URLRequest, completion: @escaping APIRequestCompletion<ReturnType>)
+    func send(request: URLRequest, completion: @escaping APIRequestCompletion) -> URLSessionDataTask?
 }
