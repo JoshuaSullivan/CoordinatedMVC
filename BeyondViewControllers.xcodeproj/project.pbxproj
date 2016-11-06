@@ -20,6 +20,8 @@
 		BC9DE79A1DCD89C60033E3ED /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7991DCD89C60033E3ED /* LoginCoordinator.swift */; };
 		BC9DE79C1DCD89D80033E3ED /* ForecastCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */; };
 		BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */; };
+		BC9DE7A01DCE15810033E3ED /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79F1DCE15810033E3ED /* APIClient.swift */; };
+		BC9DE7A21DCE16D40033E3ED /* APIClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7A11DCE16D40033E3ED /* APIClientService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		BC9DE7991DCD89C60033E3ED /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCoordinator.swift; sourceTree = "<group>"; };
 		BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCoordinator.swift; sourceTree = "<group>"; };
+		BC9DE79F1DCE15810033E3ED /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BC9DE7A11DCE16D40033E3ED /* APIClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,15 +97,15 @@
 			children = (
 				BC20FEB91DCD83DF00DFFBDB /* AppDelegate.swift */,
 				BC20FEC01DCD83DF00DFFBDB /* Assets.xcassets */,
-				BC9DE7871DCD858F0033E3ED /* coordinators */,
+				BC9DE78A1DCD858F0033E3ED /* protocols */,
 				BC9DE7881DCD858F0033E3ED /* extensions */,
 				BC9DE7891DCD858F0033E3ED /* models */,
-				BC9DE78A1DCD858F0033E3ED /* protocols */,
 				BC9DE78B1DCD858F0033E3ED /* services */,
-				BC9DE78C1DCD858F0033E3ED /* userInterfaces */,
-				BC9DE78D1DCD858F0033E3ED /* viewControllers */,
+				BC9DE7871DCD858F0033E3ED /* coordinators */,
 				BC9DE78E1DCD858F0033E3ED /* viewModels */,
+				BC9DE78D1DCD858F0033E3ED /* viewControllers */,
 				BC9DE78F1DCD858F0033E3ED /* views */,
+				BC9DE78C1DCD858F0033E3ED /* userInterfaces */,
 				BC9DE7921DCD86820033E3ED /* resources */,
 			);
 			path = BeyondViewControllers;
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */,
+				BC9DE79F1DCE15810033E3ED /* APIClient.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 		BC9DE78B1DCD858F0033E3ED /* services */ = {
 			isa = PBXGroup;
 			children = (
+				BC9DE7A11DCE16D40033E3ED /* APIClientService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -305,7 +311,9 @@
 				BC9DE7981DCD89BA0033E3ED /* AppCoordinator.swift in Sources */,
 				BC9DE7911DCD85D60033E3ED /* Result.swift in Sources */,
 				BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */,
+				BC9DE7A01DCE15810033E3ED /* APIClient.swift in Sources */,
 				BC9DE79A1DCD89C60033E3ED /* LoginCoordinator.swift in Sources */,
+				BC9DE7A21DCE16D40033E3ED /* APIClientService.swift in Sources */,
 				BC20FEBC1DCD83DF00DFFBDB /* ViewController.swift in Sources */,
 				BC9DE7961DCD87170033E3ED /* Task.swift in Sources */,
 				BC20FEBA1DCD83DF00DFFBDB /* AppDelegate.swift in Sources */,

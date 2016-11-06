@@ -8,7 +8,7 @@
 
 import Swift
 
-public enum Result<SuccessType> {
+public enum Result<SuccessType, ErrorType> {
     case success(SuccessType)
-    case failure(Error)
+    case failure(ErrorType)
 }
