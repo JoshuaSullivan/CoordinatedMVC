@@ -30,11 +30,19 @@ class HelpCoordinator: TaskCoordinator {
         viewController = vc
     }
     
-    func begin() {
-        
+    /// This class has no setup or teardown, so we're just providing empty implementations.
+    func begin() {}
+    
+    /// This class has no setup or teardown, so we're just providing empty implementations.
+    func prepareForRemoval() {}
+}
+
+extension HelpCoordinator: HelpViewControllerDelegate {
+    func helpViewController(didTapBlog helpController: HelpViewController) {
+        debugPrint("Launch blog.")
     }
     
-    func prepareForRemoval() {
-        
+    func helpViewController(didTapTwitter helpController: HelpViewController) {
+        debugPrint("Launch twitter.")
     }
 }

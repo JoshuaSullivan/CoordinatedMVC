@@ -8,28 +8,26 @@
 
 import UIKit
 
+protocol HelpViewControllerDelegate: class {
+    func helpViewController(didTapBlog helpController: HelpViewController)
+    func helpViewController(didTapTwitter helpController: HelpViewController)
+}
+
 class HelpViewController: UIViewController {
 
+    weak var delegate: HelpViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction fileprivate func blogTapped(_ sender: Any?) {
+        delegate?.helpViewController(didTapBlog: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction fileprivate func twitterTapped(_ sender: Any?) {
+        delegate?.helpViewController(didTapTwitter: self)
     }
-    */
-
 }

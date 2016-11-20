@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BC1FAA9D1DE13D1600340A32 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1FAA9C1DE13D1600340A32 /* HelpViewController.swift */; };
 		BC1FAA9F1DE13D2400340A32 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1FAA9E1DE13D2400340A32 /* ForecastViewController.swift */; };
+		BC1FAAA11DE1F5CC00340A32 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1FAAA01DE1F5CC00340A32 /* Help.storyboard */; };
+		BC1FAAA31DE1F5F400340A32 /* Forecast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1FAAA21DE1F5F400340A32 /* Forecast.storyboard */; };
 		BC20FEBA1DCD83DF00DFFBDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20FEB91DCD83DF00DFFBDB /* AppDelegate.swift */; };
 		BC20FEBC1DCD83DF00DFFBDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20FEBB1DCD83DF00DFFBDB /* ViewController.swift */; };
 		BC20FEBF1DCD83DF00DFFBDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC20FEBD1DCD83DF00DFFBDB /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		BC1FAA9C1DE13D1600340A32 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		BC1FAA9E1DE13D2400340A32 /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		BC1FAAA01DE1F5CC00340A32 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
+		BC1FAAA21DE1F5F400340A32 /* Forecast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Forecast.storyboard; sourceTree = "<group>"; };
 		BC20FEB61DCD83DF00DFFBDB /* BeyondViewControllers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondViewControllers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC20FEB91DCD83DF00DFFBDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC20FEBB1DCD83DF00DFFBDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 			children = (
 				BC20FEBD1DCD83DF00DFFBDB /* Main.storyboard */,
 				BC20FEC21DCD83DF00DFFBDB /* LaunchScreen.storyboard */,
+				BC1FAAA01DE1F5CC00340A32 /* Help.storyboard */,
+				BC1FAAA21DE1F5F400340A32 /* Forecast.storyboard */,
 			);
 			path = userInterfaces;
 			sourceTree = "<group>";
@@ -295,8 +301,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC20FEC41DCD83DF00DFFBDB /* LaunchScreen.storyboard in Resources */,
+				BC1FAAA31DE1F5F400340A32 /* Forecast.storyboard in Resources */,
 				BC20FEC11DCD83DF00DFFBDB /* Assets.xcassets in Resources */,
 				BC20FEBF1DCD83DF00DFFBDB /* Main.storyboard in Resources */,
+				BC1FAAA11DE1F5CC00340A32 /* Help.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

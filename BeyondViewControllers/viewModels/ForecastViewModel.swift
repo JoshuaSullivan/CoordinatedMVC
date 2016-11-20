@@ -6,7 +6,7 @@
 //  Copyright © 2016 Josh Sullivan. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class ForecastViewModel {
     

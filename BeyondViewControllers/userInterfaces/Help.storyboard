@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cmE-28-bna">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="DIN-1X-iGv">
+            <objects>
+                <navigationController id="cmE-28-bna" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Zr-l8-Ztn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9F4-lc-9X6" kind="relationship" relationship="rootViewController" id="vg8-qQ-NHI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IMj-4l-Lgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-287" y="81"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="3Np-tz-2yh">
+            <objects>
+                <viewController id="9F4-lc-9X6" customClass="HelpViewController" customModule="BeyondViewControllers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1yS-sp-LeI"/>
+                        <viewControllerLayoutGuide type="bottom" id="r1H-Rv-mX6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5bx-TE-SB2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is where you'd put all of the help content for your app." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD5-5H-T8p">
+                                <rect key="frame" x="16" y="223" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Joshua Sullivan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kf-Ef-dgD">
+                                <rect key="frame" x="16" y="264" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ky-jz-7be">
+                                <rect key="frame" x="171.5" y="305" width="31" height="30"/>
+                                <state key="normal" title="Blog"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ya-3d-CYQ">
+                                <rect key="frame" x="163.5" y="355" width="48" height="30"/>
+                                <state key="normal" title="Twitter"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OD5-5H-T8p" firstAttribute="leading" secondItem="5bx-TE-SB2" secondAttribute="leadingMargin" id="95l-Vv-Iio"/>
+                            <constraint firstItem="2ky-jz-7be" firstAttribute="top" secondItem="4Kf-Ef-dgD" secondAttribute="bottom" constant="20" id="E5v-O6-YDg"/>
+                            <constraint firstItem="9Ya-3d-CYQ" firstAttribute="centerX" secondItem="5bx-TE-SB2" secondAttribute="centerX" id="He6-2b-2ei"/>
+                            <constraint firstItem="OD5-5H-T8p" firstAttribute="centerY" secondItem="5bx-TE-SB2" secondAttribute="centerY" constant="-100" id="IlF-N0-z5i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OD5-5H-T8p" secondAttribute="trailing" id="bI1-GM-2LB"/>
+                            <constraint firstItem="4Kf-Ef-dgD" firstAttribute="top" secondItem="OD5-5H-T8p" secondAttribute="bottom" constant="20" id="dYW-cY-2tO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Kf-Ef-dgD" secondAttribute="trailing" id="enI-sH-EKS"/>
+                            <constraint firstItem="9Ya-3d-CYQ" firstAttribute="top" secondItem="2ky-jz-7be" secondAttribute="bottom" constant="20" id="is0-K9-WPB"/>
+                            <constraint firstItem="2ky-jz-7be" firstAttribute="centerX" secondItem="5bx-TE-SB2" secondAttribute="centerX" id="ltY-91-qyP"/>
+                            <constraint firstItem="4Kf-Ef-dgD" firstAttribute="leading" secondItem="5bx-TE-SB2" secondAttribute="leadingMargin" id="rmD-LV-c5F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help" id="u6G-56-1Ee">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="WP8-1R-pjd"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uy-Lg-ITm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="466" y="81"/>
+        </scene>
+    </scenes>
+</document>
