@@ -29,6 +29,9 @@ public protocol TaskCoordinator {
     /// - Note: When this method is called, the coordinator's root view controller won't be parented and its view won't be part of the view hierarchy. It is important not to take any actions which would rely on these factors being set.
     func begin()
     
+    /// The task should reset to its first step.
+    func restart()
+    
     /// Called immediately before the task is removed from the view stack.
     func prepareForRemoval()
 }
@@ -47,6 +50,13 @@ public protocol TaskCoordinatorDelegate: class {
     /// - Parameter taskCoordinator: The `TaskCoordinator` reaching out for assistance.
     /// - Parameter changeTask: The `Task` that is required to continue the user flow.
     func taskCoordinator(_ taskCoordinator: TaskCoordinator, changeTask newTask: Task)
+}
+
+extension TaskCoordinator {
     
+    // Provide a default implementation of restart that does nothing.
+    func restart() {
+        debugPrint("This TaskCoordinator does not support restarting.")
+    }
 }
 

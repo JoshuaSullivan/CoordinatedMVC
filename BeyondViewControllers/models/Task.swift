@@ -11,6 +11,9 @@ import Swift
 /// An enumeration of the various user tasks that compose this app.
 public enum Task {
     
+    /// The state of the app on cold launch. This task cannot be switched to from another task.
+    case startup
+    
     /// Get a current weather forecast.
     case forecast
     

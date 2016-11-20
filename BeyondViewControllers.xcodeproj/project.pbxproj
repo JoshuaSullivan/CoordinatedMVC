@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1FAA9D1DE13D1600340A32 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1FAA9C1DE13D1600340A32 /* HelpViewController.swift */; };
+		BC1FAA9F1DE13D2400340A32 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1FAA9E1DE13D2400340A32 /* ForecastViewController.swift */; };
 		BC20FEBA1DCD83DF00DFFBDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20FEB91DCD83DF00DFFBDB /* AppDelegate.swift */; };
 		BC20FEBC1DCD83DF00DFFBDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20FEBB1DCD83DF00DFFBDB /* ViewController.swift */; };
 		BC20FEBF1DCD83DF00DFFBDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC20FEBD1DCD83DF00DFFBDB /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC1FAA9C1DE13D1600340A32 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		BC1FAA9E1DE13D2400340A32 /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		BC20FEB61DCD83DF00DFFBDB /* BeyondViewControllers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondViewControllers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC20FEB91DCD83DF00DFFBDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC20FEBB1DCD83DF00DFFBDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				BC20FEBB1DCD83DF00DFFBDB /* ViewController.swift */,
+				BC1FAA9E1DE13D2400340A32 /* ForecastViewController.swift */,
+				BC1FAA9C1DE13D1600340A32 /* HelpViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -315,9 +321,11 @@
 				BC9DE7A21DCE16D40033E3ED /* APIClientService.swift in Sources */,
 				BC20FEBC1DCD83DF00DFFBDB /* ViewController.swift in Sources */,
 				BC6360481DCFAC5D00F902A0 /* ForecastViewModel.swift in Sources */,
+				BC1FAA9D1DE13D1600340A32 /* HelpViewController.swift in Sources */,
 				BC9DE7961DCD87170033E3ED /* Task.swift in Sources */,
 				BC20FEBA1DCD83DF00DFFBDB /* AppDelegate.swift in Sources */,
 				BC9DE7941DCD86B40033E3ED /* TaskCoordinator.swift in Sources */,
+				BC1FAA9F1DE13D2400340A32 /* ForecastViewController.swift in Sources */,
 				BC9DE79C1DCD89D80033E3ED /* ForecastCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
