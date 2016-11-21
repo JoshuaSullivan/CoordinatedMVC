@@ -12,26 +12,33 @@ class AppCooordinator {
     
     let apiService: APIClientService
     
-    let rootViewController: UIViewController
+    let rootViewController: UIViewController?
     
     /// Target view to place all content within.
-    let contentContainer: UIView
+    let contentContainer: UIView?
     
     /// The currently active task. We always start with .startup.
     var currentTask: Task = .startup
     
     var currentTaskCoordinator: TaskCoordinator? = nil
     
-    init(rootViewController: UIViewController, startingTask: Task? = nil) {
+    init(rootViewController: UIViewController?, startingTask: Task? = nil) {
         
         self.rootViewController = rootViewController
         
         // Create the services.
         apiService = APIClientService()
         
-        contentContainer = UIView(frame: rootViewController.view.bounds)
-        add(view: contentContainer, to: rootViewController.view)
+        // Set up the content container, if needed.
+        if let rvc = rootViewController {
+            let contentView = UIView(frame: rvc.view.bounds)
+            contentContainer = contentView
+            add(view: contentView, to: rvc.view)
+        } else {
+            contentContainer = nil
+        }
         
+        // Start the process.
         if let task = startingTask {
             begin(task)
         } else {
@@ -52,17 +59,23 @@ class AppCooordinator {
         }
         
         let nextCoordinator = coordinator(for: task)
+        transition(from: currentTaskCoordinator, to: nextCoordinator)
+        currentTaskCoordinator = nextCoordinator
     }
     
     fileprivate func coordinator(for task: Task) -> TaskCoordinator {
         switch task {
         case .forecast:
-            return ForecastCoordinator()
+            return ForecastCoordinator(apiClient: apiService)
         case .help:
             return HelpCoordinator()
         default:
             preconditionFailure("Unknown or invalid task \(task).")
         }
+    }
+    
+    fileprivate func transition(from fromTask: TaskCoordinator?, to toTask: TaskCoordinator, animated: Bool = true) {
+        // A full implementation might choose to introduce specialized animated transitions.
     }
     
 // MARK: - Helper Methods

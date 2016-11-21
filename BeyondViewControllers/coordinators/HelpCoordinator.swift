@@ -40,9 +40,29 @@ class HelpCoordinator: TaskCoordinator {
 extension HelpCoordinator: HelpViewControllerDelegate {
     func helpViewController(didTapBlog helpController: HelpViewController) {
         debugPrint("Launch blog.")
+        let app = UIApplication.shared
+        guard let url = URL(string: "http://www.chibicode.org/"), app.canOpenURL(url) else {
+            debugPrint("Can't open blog.")
+            return
+        }
+        if #available(iOS 10.0, *) {
+            app.open(url, options: [:], completionHandler: nil)
+        } else {
+            app.openURL(url)
+        }
     }
     
     func helpViewController(didTapTwitter helpController: HelpViewController) {
         debugPrint("Launch twitter.")
+        let app = UIApplication.shared
+        guard let url = URL(string: "https://twiter.com/ChibiJosh"), app.canOpenURL(url) else {
+            debugPrint("Can't open twitter.")
+            return
+        }
+        if #available(iOS 10.0, *) {
+            app.open(url, options: [:], completionHandler: nil)
+        } else {
+            app.openURL(url)
+        }
     }
 }
