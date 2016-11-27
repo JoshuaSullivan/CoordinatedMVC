@@ -22,5 +22,5 @@ public protocol APIClient {
     typealias APIRequestCompletion = (Result<JSONDictionary, APIClientError>) -> Void
     
     /// This form of the send method returns a single object of type `ReturnType`.
-    func send(request: URLRequest, completion: @escaping APIRequestCompletion) -> URLSessionDataTask?
+    @discardableResult func send(request: URLRequest, completion: @escaping APIRequestCompletion) -> URLSessionDataTask?
 }

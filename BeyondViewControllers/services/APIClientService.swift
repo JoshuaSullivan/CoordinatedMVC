@@ -10,7 +10,7 @@ import Foundation
 
 class APIClientService: APIClient {
     
-    func send(request: URLRequest, completion: @escaping APIClient.APIRequestCompletion) -> URLSessionDataTask? {
+    @discardableResult func send(request: URLRequest, completion: @escaping APIClient.APIRequestCompletion) -> URLSessionDataTask? {
         let task = URLSession.shared.dataTask(with: request) {
             (optionalData, optionalResponse, optionalError) in
             

@@ -11,6 +11,7 @@ import UIKit
 class AppCooordinator {
     
     let apiService: APIClientService
+    let locationService: LocationService
     
     let rootViewController: UIViewController?
     
@@ -28,6 +29,7 @@ class AppCooordinator {
         
         // Create the services.
         apiService = APIClientService()
+        locationService = LocationService()
         
         // Set up the content container, if needed.
         if let rvc = rootViewController {
@@ -66,7 +68,7 @@ class AppCooordinator {
     fileprivate func coordinator(for task: Task) -> TaskCoordinator {
         switch task {
         case .forecast:
-            return ForecastCoordinator(apiClient: apiService)
+            return ForecastCoordinator(apiClient: apiService, locationFinder: locationService)
         case .help:
             return HelpCoordinator()
         default:

@@ -1,33 +1,19 @@
 //
-//  ForecastViewController.swift
+//  ForecastDetailsViewController.swift
 //  BeyondViewControllers
 //
-//  Created by Joshua Sullivan on 11/19/16.
+//  Created by Joshua Sullivan on 11/27/16.
 //  Copyright © 2016 Josh Sullivan. All rights reserved.
 //
 
 import UIKit
 
-protocol ForecastViewControllerDataSource: class {
-    func getForecast(completion: @escaping (Result<[ForecastDay], Error>) -> Void)
-}
-
-class ForecastViewController: UIViewController {
-    
-    weak var dataSource: ForecastViewControllerDataSource?
-    
-    fileprivate var forecasts: [ForecastDay] = []
+class ForecastDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSource?.getForecast(completion: {
-            [weak self] result in
-            guard case .success(let forecasts) = result else {
-                return
-            }
-            self?.forecasts = forecasts
-        })
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
