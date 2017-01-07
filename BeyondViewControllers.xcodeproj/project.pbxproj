@@ -17,6 +17,9 @@
 		BC20FEC11DCD83DF00DFFBDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC20FEC01DCD83DF00DFFBDB /* Assets.xcassets */; };
 		BC20FEC41DCD83DF00DFFBDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC20FEC21DCD83DF00DFFBDB /* LaunchScreen.storyboard */; };
 		BC20FECF1DCD83DF00DFFBDB /* BeyondViewControllersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20FECE1DCD83DF00DFFBDB /* BeyondViewControllersTests.swift */; };
+		BC28B7361DF483A0006A5F9F /* FullScreenTransitioningContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B7341DF483A0006A5F9F /* FullScreenTransitioningContext.swift */; };
+		BC28B7371DF483A0006A5F9F /* GenericTaskTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B7351DF483A0006A5F9F /* GenericTaskTransition.swift */; };
+		BC28B7391DF48407006A5F9F /* InstantTaskTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B7381DF48407006A5F9F /* InstantTaskTransition.swift */; };
 		BC6360481DCFAC5D00F902A0 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6360471DCFAC5D00F902A0 /* ForecastViewModel.swift */; };
 		BC9DE7911DCD85D60033E3ED /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7901DCD85D60033E3ED /* Result.swift */; };
 		BC9DE7941DCD86B40033E3ED /* TaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */; };
@@ -59,6 +62,9 @@
 		BC20FECA1DCD83DF00DFFBDB /* BeyondViewControllersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeyondViewControllersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC20FECE1DCD83DF00DFFBDB /* BeyondViewControllersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeyondViewControllersTests.swift; sourceTree = "<group>"; };
 		BC20FED01DCD83DF00DFFBDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC28B7341DF483A0006A5F9F /* FullScreenTransitioningContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenTransitioningContext.swift; sourceTree = "<group>"; };
+		BC28B7351DF483A0006A5F9F /* GenericTaskTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTaskTransition.swift; sourceTree = "<group>"; };
+		BC28B7381DF48407006A5F9F /* InstantTaskTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantTaskTransition.swift; sourceTree = "<group>"; };
 		BC6360471DCFAC5D00F902A0 /* ForecastViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		BC9DE7901DCD85D60033E3ED /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCoordinator.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 				BC9DE78E1DCD858F0033E3ED /* viewModels */,
 				BC9DE78D1DCD858F0033E3ED /* viewControllers */,
 				BC9DE78F1DCD858F0033E3ED /* views */,
+				BC28B7331DF483A0006A5F9F /* transitions */,
 				BC9DE78C1DCD858F0033E3ED /* userInterfaces */,
 				BC9DE7921DCD86820033E3ED /* resources */,
 			);
@@ -139,6 +146,16 @@
 				BC20FED01DCD83DF00DFFBDB /* Info.plist */,
 			);
 			path = BeyondViewControllersTests;
+			sourceTree = "<group>";
+		};
+		BC28B7331DF483A0006A5F9F /* transitions */ = {
+			isa = PBXGroup;
+			children = (
+				BC28B7341DF483A0006A5F9F /* FullScreenTransitioningContext.swift */,
+				BC28B7351DF483A0006A5F9F /* GenericTaskTransition.swift */,
+				BC28B7381DF48407006A5F9F /* InstantTaskTransition.swift */,
+			);
+			path = transitions;
 			sourceTree = "<group>";
 		};
 		BC9DE7871DCD858F0033E3ED /* coordinators */ = {
@@ -355,6 +372,7 @@
 				BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */,
 				BC9DE7A01DCE15810033E3ED /* APIClient.swift in Sources */,
 				BCB111591DEB557B00E5BA93 /* ForecastDay.swift in Sources */,
+				BC28B7391DF48407006A5F9F /* InstantTaskTransition.swift in Sources */,
 				BC9DE7A21DCE16D40033E3ED /* APIClientService.swift in Sources */,
 				BC20FEBC1DCD83DF00DFFBDB /* ViewController.swift in Sources */,
 				BC6360481DCFAC5D00F902A0 /* ForecastViewModel.swift in Sources */,
@@ -363,7 +381,9 @@
 				BC9DE7961DCD87170033E3ED /* Task.swift in Sources */,
 				BCB111521DEB457300E5BA93 /* GlobalDeclarations.swift in Sources */,
 				BCB1115B1DEB590F00E5BA93 /* JSONConvertible.swift in Sources */,
+				BC28B7371DF483A0006A5F9F /* GenericTaskTransition.swift in Sources */,
 				BC20FEBA1DCD83DF00DFFBDB /* AppDelegate.swift in Sources */,
+				BC28B7361DF483A0006A5F9F /* FullScreenTransitioningContext.swift in Sources */,
 				BC9DE7941DCD86B40033E3ED /* TaskCoordinator.swift in Sources */,
 				BC1FAA9F1DE13D2400340A32 /* ForecastViewController.swift in Sources */,
 				BC9DE79C1DCD89D80033E3ED /* ForecastCoordinator.swift in Sources */,
