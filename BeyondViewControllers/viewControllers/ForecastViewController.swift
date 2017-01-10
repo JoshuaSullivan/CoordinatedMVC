@@ -14,10 +14,15 @@ protocol ForecastViewControllerDataSource: class {
 
 class ForecastViewController: UIViewController {
     
+    private let cellSize = CGSize(width: 100.0, height: 130.0)
+    private let minSpacing: CGFloat = 10.0
+    
     weak var dataSource: ForecastViewControllerDataSource?
     
     fileprivate var forecasts: [ForecastDay] = []
 
+    @IBOutlet weak var collectionView: UICollectionView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,22 +33,46 @@ class ForecastViewController: UIViewController {
             }
             self?.forecasts = forecasts
         })
+        
+        self.navigationItem.title = "Forecast"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let screenWidth = UIScreen.main.bounds.width
+        let availableWidth = screenWidth - minSpacing
+        let columns = floor(availableWidth / (cellSize.width + minSpacing))
+        let paddingSpace = screenWidth - (cellSize.width * columns)
+        let padding = floor(paddingSpace / (columns + 1))
+        let insetSpace = floor((paddingSpace - padding * columns) / 2.0)
+        self.collectionView?.contentInset = UIEdgeInsets(top: insetSpace, left: insetSpace, bottom: insetSpace, right: insetSpace)
+        if let flow = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flow.minimumInteritemSpacing = padding
+            flow.minimumLineSpacing = padding
+        }
+        self.collectionView?.dataSource = self
+        self.collectionView?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension ForecastViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+}
+
+//extension ForecastViewController: UICollectionViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        
+//    }
+//}
