@@ -18,7 +18,7 @@ class ForecastViewModel {
         self.locationFinder = locationFinder
         
         // Fake ze data for ze 10-day forecast.
-        let allConditions: [ForecastDay.Conditions] = [.sunny, .partlyCloudy, .cloudy, .snow, .freezingRain, .blizzard]
+        let allConditions: [ForecastDay.Conditions] = [.sunny, .partlyCloudy, .cloudy, .snow]
         let count32 = UInt32(allConditions.count)
         let now = Date()
         let calendar = Calendar(identifier: .gregorian)

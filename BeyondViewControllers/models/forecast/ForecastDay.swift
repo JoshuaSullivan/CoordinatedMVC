@@ -16,8 +16,6 @@ public struct ForecastDay {
         case partlyCloudy
         case cloudy
         case snow
-        case freezingRain
-        case blizzard
         
         /// A displayable string for the weather conditions.
         /// - Note: In a full app, you'd want these localized.
@@ -27,8 +25,6 @@ public struct ForecastDay {
             case .partlyCloudy: return "Partly Cloudy"
             case .cloudy:       return "Cloudy"
             case .snow:         return "Snow"
-            case .freezingRain: return "Freezing Rain"
-            case .blizzard:     return "Blizzard"
             }
         }
         
