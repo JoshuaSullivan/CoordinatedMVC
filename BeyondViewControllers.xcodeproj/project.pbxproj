@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC140B2D1E3E584100D55BE8 /* GlobalDeclarations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC140B2C1E3E584100D55BE8 /* GlobalDeclarations.swift */; };
 		BC1FAA9D1DE13D1600340A32 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1FAA9C1DE13D1600340A32 /* HelpViewController.swift */; };
 		BC1FAA9F1DE13D2400340A32 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1FAA9E1DE13D2400340A32 /* ForecastViewController.swift */; };
 		BC1FAAA11DE1F5CC00340A32 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1FAAA01DE1F5CC00340A32 /* Help.storyboard */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC140B2C1E3E584100D55BE8 /* GlobalDeclarations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDeclarations.swift; sourceTree = "<group>"; };
 		BC1FAA9C1DE13D1600340A32 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		BC1FAA9E1DE13D2400340A32 /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		BC1FAAA01DE1F5CC00340A32 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				BC20FEB91DCD83DF00DFFBDB /* AppDelegate.swift */,
+				BC140B2C1E3E584100D55BE8 /* GlobalDeclarations.swift */,
 				BC20FEC01DCD83DF00DFFBDB /* Assets.xcassets */,
 				BC9DE78A1DCD858F0033E3ED /* protocols */,
 				BC9DE7881DCD858F0033E3ED /* extensions */,
@@ -369,6 +372,7 @@
 			files = (
 				BC9DE7981DCD89BA0033E3ED /* AppCoordinator.swift in Sources */,
 				BCA0CBD81E21563700D1BFAB /* ForecastCollectionViewCell.swift in Sources */,
+				BC140B2D1E3E584100D55BE8 /* GlobalDeclarations.swift in Sources */,
 				BCB1115D1DEB954C00E5BA93 /* ForecastDetailsViewController.swift in Sources */,
 				BC9DE7911DCD85D60033E3ED /* Result.swift in Sources */,
 				BCB111561DEB51ED00E5BA93 /* LocationFinder.swift in Sources */,
