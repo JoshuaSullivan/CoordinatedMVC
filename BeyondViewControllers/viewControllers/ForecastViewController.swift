@@ -27,7 +27,7 @@ protocol ForecastViewControllerDelegate: class {
 class ForecastViewController: UIViewController {
     
     /// Default cell size.
-    private let cellSize = CGSize(width: 100.0, height: 140.0)
+    private let cellSize = CGSize(width: 100.0, height: 150.0)
     
     /// 10pt between cells.
     private let minSpacing: CGFloat = 10.0
@@ -36,7 +36,7 @@ class ForecastViewController: UIViewController {
     weak var delegate: ForecastViewControllerDelegate?
     
     fileprivate var forecasts: [ForecastDay] = []
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -51,6 +51,13 @@ class ForecastViewController: UIViewController {
             strongSelf.forecasts = forecasts
             strongSelf.collectionView.reloadData()
         })
+        
+        dataSource?.getLocation {
+            [weak self]
+            location in
+            guard let strongSelf = self else { return }
+            strongSelf.navigationItem.title = location
+        }
         
         self.navigationItem.title = "Forecast"
     }
@@ -94,6 +101,7 @@ extension ForecastViewController: UICollectionViewDataSource {
             let forecast = forecasts[indexPath.item]
             forecastCell.imageView?.image = UIImage(named: forecast.iconName)
             forecastCell.label?.text = forecast.conditions.displayable
+            forecastCell.dateLabel?.text = forecastDateFormatter.string(from: forecast.date)
         }
         return cell
     }
