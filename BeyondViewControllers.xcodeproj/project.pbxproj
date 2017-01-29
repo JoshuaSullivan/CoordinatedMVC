@@ -27,8 +27,6 @@
 		BC9DE7981DCD89BA0033E3ED /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7971DCD89BA0033E3ED /* AppCoordinator.swift */; };
 		BC9DE79C1DCD89D80033E3ED /* ForecastCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */; };
 		BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */; };
-		BC9DE7A01DCE15810033E3ED /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79F1DCE15810033E3ED /* APIClient.swift */; };
-		BC9DE7A21DCE16D40033E3ED /* APIClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7A11DCE16D40033E3ED /* APIClientService.swift */; };
 		BCA0CBD81E21563700D1BFAB /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0CBD71E21563700D1BFAB /* ForecastCollectionViewCell.swift */; };
 		BCB111521DEB457300E5BA93 /* GlobalDeclarations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB111511DEB457300E5BA93 /* GlobalDeclarations.swift */; };
 		BCB111541DEB468200E5BA93 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB111531DEB468200E5BA93 /* LocationService.swift */; };
@@ -73,8 +71,6 @@
 		BC9DE7971DCD89BA0033E3ED /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCoordinator.swift; sourceTree = "<group>"; };
 		BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCoordinator.swift; sourceTree = "<group>"; };
-		BC9DE79F1DCE15810033E3ED /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		BC9DE7A11DCE16D40033E3ED /* APIClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientService.swift; sourceTree = "<group>"; };
 		BCA0CBD71E21563700D1BFAB /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		BCB111511DEB457300E5BA93 /* GlobalDeclarations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDeclarations.swift; sourceTree = "<group>"; };
 		BCB111531DEB468200E5BA93 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -102,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC140B2B1E3D925900D55BE8 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				BCB111551DEB51ED00E5BA93 /* LocationFinder.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		BC20FEAD1DCD83DF00DFFBDB = {
 			isa = PBXGroup;
 			children = (
@@ -190,9 +194,8 @@
 		BC9DE78A1DCD858F0033E3ED /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				BC140B2B1E3D925900D55BE8 /* services */,
 				BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */,
-				BC9DE79F1DCE15810033E3ED /* APIClient.swift */,
-				BCB111551DEB51ED00E5BA93 /* LocationFinder.swift */,
 				BCB1115A1DEB590F00E5BA93 /* JSONConvertible.swift */,
 			);
 			path = protocols;
@@ -201,7 +204,6 @@
 		BC9DE78B1DCD858F0033E3ED /* services */ = {
 			isa = PBXGroup;
 			children = (
-				BC9DE7A11DCE16D40033E3ED /* APIClientService.swift */,
 				BCB111531DEB468200E5BA93 /* LocationService.swift */,
 			);
 			path = services;
@@ -374,10 +376,8 @@
 				BC9DE7911DCD85D60033E3ED /* Result.swift in Sources */,
 				BCB111561DEB51ED00E5BA93 /* LocationFinder.swift in Sources */,
 				BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */,
-				BC9DE7A01DCE15810033E3ED /* APIClient.swift in Sources */,
 				BCB111591DEB557B00E5BA93 /* ForecastDay.swift in Sources */,
 				BC28B7391DF48407006A5F9F /* InstantTaskTransition.swift in Sources */,
-				BC9DE7A21DCE16D40033E3ED /* APIClientService.swift in Sources */,
 				BC20FEBC1DCD83DF00DFFBDB /* RootViewController.swift in Sources */,
 				BC6360481DCFAC5D00F902A0 /* ForecastViewModel.swift in Sources */,
 				BCB111541DEB468200E5BA93 /* LocationService.swift in Sources */,

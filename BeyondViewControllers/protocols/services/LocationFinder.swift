@@ -13,6 +13,6 @@ protocol LocationFinder {
     /// The closure is guaranteed to return a string.
     typealias RequestCompletion = (String) -> Void
     
-    /// Get a query string to use with the API.
-    func getLocationQueryString(completion: @escaping RequestCompletion)
+    /// Get the user's location.
+    func getLocation(completion: @escaping RequestCompletion)
 }

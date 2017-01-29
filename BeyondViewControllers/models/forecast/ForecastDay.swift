@@ -8,28 +8,26 @@
 
 import Foundation
 
+/// A simple data structure encapsulating a single day's forecst.
 struct ForecastDay {
+    
+    /// The date of the forecast.
+    /// - Note: Only the year / month / day is relevant.
     let date: Date
+    
+    /// The daily high temperature. In degrees Faranheit.
     let high: Int
+    
+    /// The daily low temperature. In degrees Faranheit.
     let low: Int
+    
+    /// The current conditions as a displayable string.
     let conditions: String
-    let iconUrl: URL
+    
+    /// The name of the icon representing the current conditions.
+    let iconName: String
+    
+    /// An extended description of the current conditions.
     let text: String
 }
 
-extension ForecastDay: JSONConvertible {
-    
-    private struct Keys {
-        static let date = "epoch"
-    }
-    
-    init?(json: JSONDictionary) {
-        guard
-            let rawDate = json[Keys.date] as? Double
-            else {
-                return nil
-        }
-        let date = Date(timeIntervalSince1970: rawDate)
-        return nil
-    }
-}

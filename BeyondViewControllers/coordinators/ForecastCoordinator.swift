@@ -43,9 +43,9 @@ class ForecastCoordinator: TaskCoordinator {
     /// This class takes an APIClient-conforming object as init argument, allowing the
     /// easy substitution of a mock object for testing. If this class found the APIClient
     /// via a singleton accessor, there would be no way to subsitute a mock object.
-    init(apiClient: APIClient, locationFinder: LocationFinder) {
+    init(locationFinder: LocationFinder) {
         navController = UINavigationController()
-        viewModel = ForecastViewModel(apiClient: apiClient, locationFinder: locationFinder)
+        viewModel = ForecastViewModel(locationFinder: locationFinder)
     }
     
     /// Do any remaining setup before the coordinator's view appears on stage.

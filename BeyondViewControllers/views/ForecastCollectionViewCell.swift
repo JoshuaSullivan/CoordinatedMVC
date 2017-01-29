@@ -9,6 +9,9 @@
 import UIKit
 
 class ForecastCollectionViewCell: UICollectionViewCell {
+    
+    static let Identifier = "forecastCollectionViewCellIdentifier"
+    
     @IBOutlet weak var imageView: UIImageView?
     @IBOutlet weak var label: UILabel?
 }

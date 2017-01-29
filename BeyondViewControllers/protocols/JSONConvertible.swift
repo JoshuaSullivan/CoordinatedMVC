@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// The object type for JSON parsed using JSONSerialization.
+typealias JSONDictionary = [String : Any]
+
 protocol JSONConvertible {
+    /// Initialize an object with a JDSON dictionary.
     init?(json: JSONDictionary)
 }
