@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,21 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tCe-b6-gLz">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCe-b6-gLz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AJm-Bm-o3U">
-                                    <size key="itemSize" width="100" height="130"/>
+                                    <size key="itemSize" width="100" height="140"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCellIdentifier" id="T6G-OL-qtJ" customClass="ForecastCollectionViewCell" customModule="BeyondViewControllers" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="100" height="130"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="forecastCollectionViewCellIdentifier" id="T6G-OL-qtJ" customClass="ForecastCollectionViewCell" customModule="BeyondViewControllers" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="100" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ECK-9c-RPW">
@@ -45,7 +45,7 @@
                                                         <constraint firstAttribute="width" secondItem="ECK-9c-RPW" secondAttribute="height" multiplier="1:1" id="NBj-Bo-5Pi"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMT-MK-Iyy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMT-MK-Iyy">
                                                     <rect key="frame" x="8" y="104" width="84" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -61,27 +61,35 @@
                                             <constraint firstAttribute="trailing" secondItem="ECK-9c-RPW" secondAttribute="trailing" id="mGF-cA-adl"/>
                                             <constraint firstItem="ECK-9c-RPW" firstAttribute="top" secondItem="T6G-OL-qtJ" secondAttribute="top" id="ueU-kc-QF1"/>
                                         </constraints>
-                                        <size key="customSize" width="100" height="130"/>
+                                        <size key="customSize" width="100" height="140"/>
                                         <connections>
                                             <outlet property="imageView" destination="ECK-9c-RPW" id="WBL-xd-5NM"/>
                                             <outlet property="label" destination="hMT-MK-Iyy" id="Yne-Il-2iU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="SzN-Yn-4xY" id="dnx-EO-zfq"/>
+                                    <outlet property="delegate" destination="SzN-Yn-4xY" id="ixI-Bl-9YX"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tCe-b6-gLz" firstAttribute="top" secondItem="Qjh-kr-GT8" secondAttribute="bottom" id="IqE-wq-oH0"/>
+                            <constraint firstItem="tCe-b6-gLz" firstAttribute="top" secondItem="BQ2-DE-j5j" secondAttribute="top" id="PLm-xi-Idj"/>
                             <constraint firstItem="tCe-b6-gLz" firstAttribute="leading" secondItem="BQ2-DE-j5j" secondAttribute="leading" id="k4S-iV-iqk"/>
                             <constraint firstItem="o5Y-96-yON" firstAttribute="top" secondItem="tCe-b6-gLz" secondAttribute="bottom" id="kBJ-1c-kX6"/>
                             <constraint firstAttribute="trailing" secondItem="tCe-b6-gLz" secondAttribute="trailing" id="zkD-jD-kIo"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="tCe-b6-gLz" id="TZ2-Ll-WU5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtC-e5-L6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278" y="178"/>
+            <point key="canvasLocation" x="-279.19999999999999" y="177.66116941529236"/>
         </scene>
         <!--Forecast Details View Controller-->
         <scene sceneID="Vzr-LK-lhW">

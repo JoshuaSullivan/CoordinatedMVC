@@ -27,7 +27,7 @@ protocol ForecastViewControllerDelegate: class {
 class ForecastViewController: UIViewController {
     
     /// Default cell size.
-    private let cellSize = CGSize(width: 100.0, height: 130.0)
+    private let cellSize = CGSize(width: 100.0, height: 140.0)
     
     /// 10pt between cells.
     private let minSpacing: CGFloat = 10.0
@@ -93,6 +93,7 @@ extension ForecastViewController: UICollectionViewDataSource {
         if let forecastCell = cell as? ForecastCollectionViewCell {
             let forecast = forecasts[indexPath.item]
             forecastCell.imageView?.image = UIImage(named: forecast.iconName)
+            forecastCell.label?.text = forecast.conditions.displayable
         }
         return cell
     }
