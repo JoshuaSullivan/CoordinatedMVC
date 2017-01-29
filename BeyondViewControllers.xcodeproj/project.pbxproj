@@ -28,7 +28,6 @@
 		BC9DE79C1DCD89D80033E3ED /* ForecastCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */; };
 		BC9DE79E1DCD89E00033E3ED /* HelpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */; };
 		BCA0CBD81E21563700D1BFAB /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0CBD71E21563700D1BFAB /* ForecastCollectionViewCell.swift */; };
-		BCB111521DEB457300E5BA93 /* GlobalDeclarations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB111511DEB457300E5BA93 /* GlobalDeclarations.swift */; };
 		BCB111541DEB468200E5BA93 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB111531DEB468200E5BA93 /* LocationService.swift */; };
 		BCB111561DEB51ED00E5BA93 /* LocationFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB111551DEB51ED00E5BA93 /* LocationFinder.swift */; };
 		BCB111591DEB557B00E5BA93 /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB111581DEB557B00E5BA93 /* ForecastDay.swift */; };
@@ -72,7 +71,6 @@
 		BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCoordinator.swift; sourceTree = "<group>"; };
 		BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpCoordinator.swift; sourceTree = "<group>"; };
 		BCA0CBD71E21563700D1BFAB /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
-		BCB111511DEB457300E5BA93 /* GlobalDeclarations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDeclarations.swift; sourceTree = "<group>"; };
 		BCB111531DEB468200E5BA93 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		BCB111551DEB51ED00E5BA93 /* LocationFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationFinder.swift; sourceTree = "<group>"; };
 		BCB111581DEB557B00E5BA93 /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				BC20FEB91DCD83DF00DFFBDB /* AppDelegate.swift */,
-				BCB111511DEB457300E5BA93 /* GlobalDeclarations.swift */,
 				BC20FEC01DCD83DF00DFFBDB /* Assets.xcassets */,
 				BC9DE78A1DCD858F0033E3ED /* protocols */,
 				BC9DE7881DCD858F0033E3ED /* extensions */,
@@ -383,7 +380,6 @@
 				BCB111541DEB468200E5BA93 /* LocationService.swift in Sources */,
 				BC1FAA9D1DE13D1600340A32 /* HelpViewController.swift in Sources */,
 				BC9DE7961DCD87170033E3ED /* Task.swift in Sources */,
-				BCB111521DEB457300E5BA93 /* GlobalDeclarations.swift in Sources */,
 				BCB1115B1DEB590F00E5BA93 /* JSONConvertible.swift in Sources */,
 				BC28B7371DF483A0006A5F9F /* GenericTaskTransition.swift in Sources */,
 				BC20FEBA1DCD83DF00DFFBDB /* AppDelegate.swift in Sources */,
