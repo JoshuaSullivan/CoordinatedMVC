@@ -12,8 +12,31 @@ class ForecastViewModel {
     
     fileprivate let locationFinder: LocationFinder
     
+    fileprivate let forecasts: [ForecastDay]
+    
     init(locationFinder: LocationFinder) {
         self.locationFinder = locationFinder
+        
+        // Fake ze data for ze 10-day forecast.
+        let allConditions: [ForecastDay.Conditions] = [.sunny, .partlyCloudy, .cloudy, .snow, .freezingRain, .blizzard]
+        let count32 = UInt32(allConditions.count)
+        let now = Date()
+        let calendar = Calendar(identifier: .gregorian)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+        forecasts = (0..<10).map {
+            index in
+            let date = calendar.date(byAdding: .day, value: index, to: now)!
+            let low = 5 + Int(arc4random_uniform(20))
+            let high = low + Int(arc4random_uniform(20))
+            let conditionIndex = Int(arc4random_uniform(count32))
+            let conditions = allConditions[conditionIndex]
+            let description = "This is the forecast for \(dateFormatter.string(from: date)). The high will be \(high)°F, with overnight lows around \(low)°F. Expect \(conditions.displayable) conditions all day."
+            debugPrint(description)
+            let forecast = ForecastDay(date: date, high: high, low: low, conditions: conditions, iconName: conditions.iconName, text: description)
+            return forecast
+        }
     }
     
     func prepareForRemoval() {
