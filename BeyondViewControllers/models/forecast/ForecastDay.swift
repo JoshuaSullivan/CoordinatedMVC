@@ -9,25 +9,52 @@
 import Foundation
 
 /// A simple data structure encapsulating a single day's forecst.
-struct ForecastDay {
+public struct ForecastDay {
+    
+    public enum Conditions: String {
+        case sunny
+        case partlyCloudy
+        case cloudy
+        case snow
+        case freezingRain
+        case blizzard
+        
+        /// A displayable string for the weather conditions.
+        /// - Note: In a full app, you'd want these localized.
+        public var displayable: String {
+            switch self {
+            case .sunny:        return "Sunny"
+            case .partlyCloudy: return "Partly Cloudy"
+            case .cloudy:       return "Cloudy"
+            case .snow:         return "Snow"
+            case .freezingRain: return "Freezing Rain"
+            case .blizzard:     return "Blizzard"
+            }
+        }
+        
+        /// The Icon name for the weather conditions.
+        public var iconName: String {
+            return self.rawValue
+        }
+    }
     
     /// The date of the forecast.
     /// - Note: Only the year / month / day is relevant.
-    let date: Date
+    public let date: Date
     
     /// The daily high temperature. In degrees Faranheit.
-    let high: Int
+    public let high: Int
     
     /// The daily low temperature. In degrees Faranheit.
-    let low: Int
+    public let low: Int
     
-    /// The current conditions as a displayable string.
-    let conditions: String
+    /// The current conditions.
+    public let conditions: Conditions
     
     /// The name of the icon representing the current conditions.
-    let iconName: String
+    public let iconName: String
     
     /// An extended description of the current conditions.
-    let text: String
+    public let text: String
 }
 
