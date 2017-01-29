@@ -18,7 +18,7 @@ protocol ForecastViewControllerDataSource: class {
 
 protocol ForecastViewControllerDelegate: class {
     /// Triggered when the user taps a day for more details.
-    func forecastViewController(_ forecastViewController: ForecastViewController, detailsFor: ForecastDay)
+    func forecastViewController(_ forecastViewController: ForecastViewController, detailsFor day: ForecastDay)
     
     /// Triggered when the user taps the help button.
     func forecastViewController(didTapHelp forecastViewController: ForecastViewController)
@@ -37,17 +37,19 @@ class ForecastViewController: UIViewController {
     
     fileprivate var forecasts: [ForecastDay] = []
 
-    @IBOutlet weak var collectionView: UICollectionView?
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         dataSource?.getForecast(completion: {
             [weak self] result in
+            guard let strongSelf = self else { return }
             guard case .success(let forecasts) = result else {
                 return
             }
-            self?.forecasts = forecasts
+            strongSelf.forecasts = forecasts
+            strongSelf.collectionView.reloadData()
         })
         
         self.navigationItem.title = "Forecast"

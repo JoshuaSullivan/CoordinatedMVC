@@ -14,6 +14,8 @@ class ForecastViewModel {
     
     fileprivate let forecasts: [ForecastDay]
     
+    var selectedDay: ForecastDay? = nil
+    
     init(locationFinder: LocationFinder) {
         self.locationFinder = locationFinder
         
@@ -33,7 +35,6 @@ class ForecastViewModel {
             let conditionIndex = Int(arc4random_uniform(count32))
             let conditions = allConditions[conditionIndex]
             let description = "This is the forecast for \(dateFormatter.string(from: date)). The high will be \(high)°F, with overnight lows around \(low)°F. Expect \(conditions.displayable) conditions all day."
-            debugPrint(description)
             let forecast = ForecastDay(date: date, high: high, low: low, conditions: conditions, iconName: conditions.iconName, text: description)
             return forecast
         }
@@ -54,6 +55,17 @@ extension ForecastViewModel: ForecastViewControllerDataSource {
     /// In a real app, this would involve an API call to the server to download forecast data for
     /// for the user's current location.
     func getForecast(completion: @escaping (Result<[ForecastDay], Error>) -> Void) {
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { 
+            completion(.success(self.forecasts))
+        }
+    }
+}
+
+extension ForecastViewModel: ForecastDetailsViewControllerDataSource {
+    var forecast: ForecastDay {
+        guard let day = selectedDay else {
+            preconditionFailure("Requesting the selected day when none exists.")
+        }
+        return day
     }
 }

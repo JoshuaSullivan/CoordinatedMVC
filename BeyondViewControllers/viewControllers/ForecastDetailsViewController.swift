@@ -8,11 +8,26 @@
 
 import UIKit
 
+protocol ForecastDetailsViewControllerDataSource: class {
+    var forecast: ForecastDay { get }
+}
+
+protocol ForecastDetailsViewControllerDelegate: class {
+    func forecastDetails(didTapBack forecastDetails: ForecastDetailsViewController)
+}
+
 class ForecastDetailsViewController: UIViewController {
 
+    weak var dataSource: ForecastDetailsViewControllerDataSource!
+    weak var delegate: ForecastDetailsViewControllerDelegate!
+    
+    private var forecast: ForecastDay!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        forecast = dataSource.forecast
+        
         // Do any additional setup after loading the view.
     }
 

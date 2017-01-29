@@ -38,6 +38,9 @@ class ForecastCoordinator: TaskCoordinator {
     /// The view model driving the Forecast screen.
     fileprivate let viewModel: ForecastViewModel
     
+    /// The step this coordinator is currently on.
+    fileprivate var currentStep: Step = .summary
+    
     // MARK: - Lifecycle
     
     /// This class takes an APIClient-conforming object as init argument, allowing the
@@ -59,16 +62,42 @@ class ForecastCoordinator: TaskCoordinator {
     
     //MARK: - Flow Management
     
+    /// Take all necessary actions to display the requested Step.
     fileprivate func show(step: Step) {
         switch step {
         case .summary:
-            let vc = UIStoryboard(name: "Forecast", bundle: nil).instantiateViewController(withIdentifier: "summary")
+            guard let vc = UIStoryboard(name: "Forecast", bundle: nil).instantiateViewController(withIdentifier: "summary") as? ForecastViewController else {
+                preconditionFailure("Did not get the expected view controller type.")
+            }
+            vc.dataSource = viewModel
+            vc.delegate = self
             navController.setViewControllers([vc], animated: true)
         case .details:
-            let vc = UIStoryboard(name: "Forecast", bundle: nil).instantiateViewController(withIdentifier: "details")
+            guard let vc = UIStoryboard(name: "Forecast", bundle: nil).instantiateViewController(withIdentifier: "details") as? ForecastDetailsViewController else {
+                preconditionFailure("Did not get the expected view controller type.")
+            }
+            vc.dataSource = viewModel
+            vc.delegate = self
             navController.pushViewController(vc, animated: true)
         }
-        
+        currentStep = step
+    }
+}
+
+extension ForecastCoordinator: ForecastViewControllerDelegate {
+    func forecastViewController(_ forecastViewController: ForecastViewController, detailsFor day: ForecastDay) {
+        viewModel.selectedDay = day
+        show(step: .details)
     }
     
+    func forecastViewController(didTapHelp forecastViewController: ForecastViewController) {
+        delegate?.taskCoordinator(self, changeTask: .help)
+    }
+}
+
+extension ForecastCoordinator: ForecastDetailsViewControllerDelegate {
+    func forecastDetails(didTapBack forecastDetails: ForecastDetailsViewController) {
+        navController.popViewController(animated: true)
+        currentStep = .summary
+    }
 }
