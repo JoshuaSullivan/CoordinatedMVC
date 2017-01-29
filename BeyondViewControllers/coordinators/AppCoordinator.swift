@@ -64,14 +64,17 @@ class AppCooordinator {
     }
     
     fileprivate func coordinator(for task: Task) -> TaskCoordinator {
+        let taskCoord: TaskCoordinator
         switch task {
         case .forecast:
-            return ForecastCoordinator(locationFinder: locationService)
+            taskCoord = ForecastCoordinator(locationFinder: locationService)
         case .help:
-            return HelpCoordinator()
+            taskCoord = HelpCoordinator()
         default:
             preconditionFailure("Unknown or invalid task \(task).")
         }
+        taskCoord.delegate = self
+        return taskCoord
     }
     
     fileprivate func transition(from fromCoordinator: TaskCoordinator?, to toCoordinator: TaskCoordinator, animated: Bool = true, completion:(() -> Void)? = nil) {
@@ -177,5 +180,23 @@ class AppCooordinator {
         view.rightAnchor.constraint(equalTo: parentView.rightAnchor, constant: insets.right).isActive = true
         view.bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: insets.bottom).isActive = true
     }
+}
+
+extension AppCooordinator: TaskCoordinatorDelegate {
+    func taskCoordinator(_ taskCoordinator: TaskCoordinator, changeTask newTask: Task) {
+        begin(newTask)
+    }
     
+    func taskCoordinator(canceled taskCoordinator: TaskCoordinator) {
+        // Unused in this demo app. Could be used for canceling login or other completion-sensitive tasks.
+    }
+    
+    func taskCoordinator(finished taskCoordinator: TaskCoordinator) {
+        switch taskCoordinator.task {
+        case .help:
+            begin(.forecast)
+        default:
+            assertionFailure("The task '\(taskCoordinator.task)' is not handled for completion.")
+        }
+    }
 }

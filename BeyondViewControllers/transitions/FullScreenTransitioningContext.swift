@@ -31,16 +31,19 @@ class FullScreenTransitioningContext: NSObject, UIViewControllerContextTransitio
     fileprivate let completion: TransitionCompletion?
     
     init(from: UIViewController, to: UIViewController, container: UIView, completion: TransitionCompletion?) {
-        guard from.isViewLoaded && to.isViewLoaded else {
-            preconditionFailure("Both the 'from' and the 'to' view controllers must have their views loaded prior to using them in a transition.")
+        guard
+            let fromView = from.view,
+            let toView = to.view
+            else {
+                preconditionFailure("Both the 'from' and the 'to' view controllers must have their views loaded prior to using them in a transition.")
         }
         viewControllers = [
             UITransitionContextViewControllerKey.from : from,
             UITransitionContextViewControllerKey.to : to
         ]
         views = [
-            UITransitionContextViewKey.from : from.view,
-            UITransitionContextViewKey.to : to.view
+            UITransitionContextViewKey.from : fromView,
+            UITransitionContextViewKey.to : toView
         ]
         containerView = container
         self.completion = completion
@@ -68,7 +71,7 @@ class FullScreenTransitioningContext: NSObject, UIViewControllerContextTransitio
         return containerView.frame
     }
     
-// Mark: - Interactive Transition (Unused)
+    // Mark: - Interactive Transition (Unused)
     
     public func updateInteractiveTransition(_ percentComplete: CGFloat) {}
     

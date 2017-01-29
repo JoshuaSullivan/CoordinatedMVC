@@ -15,12 +15,6 @@ public protocol TaskCoordinator {
     /// The view controller which the task coordinator will use to present its managed screens. Usually an instance of `UINavigationController`.
     var rootViewController: UIViewController { get }
     
-    /// Determines whether the TaskCoordinator expects to be presented modally.
-    /// Modal tasks can "interrupt" other tasks to complete an immediately pressing
-    /// app concern, such as presenting a login screen when authentication fails or
-    /// presenting a Shopping Cart view when the user taps an appropriate button.
-    var isModalTask: Bool { get }
-    
     /// The task coordinator's delegate.
     weak var delegate: TaskCoordinatorDelegate? { get set }
     

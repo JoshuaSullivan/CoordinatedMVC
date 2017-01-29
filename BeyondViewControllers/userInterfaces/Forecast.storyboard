@@ -96,6 +96,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Forecast" id="0fp-dh-Tus">
                         <barButtonItem key="backBarButtonItem" title="Back" id="zda-97-Mh3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Help" id="7GL-mJ-7aU">
+                            <connections>
+                                <action selector="helpTapped:" destination="SzN-Yn-4xY" id="OCy-6L-Cxo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>

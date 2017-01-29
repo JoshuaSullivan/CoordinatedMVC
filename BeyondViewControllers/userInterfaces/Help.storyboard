@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cmE-28-bna">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9F4-lc-9X6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="DIN-1X-iGv">
-            <objects>
-                <navigationController id="cmE-28-bna" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Zr-l8-Ztn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="9F4-lc-9X6" kind="relationship" relationship="rootViewController" id="vg8-qQ-NHI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IMj-4l-Lgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-287" y="81"/>
-        </scene>
         <!--Help-->
         <scene sceneID="3Np-tz-2yh">
             <objects>
@@ -53,10 +36,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ky-jz-7be">
                                 <rect key="frame" x="171.5" y="305" width="31" height="30"/>
                                 <state key="normal" title="Blog"/>
+                                <connections>
+                                    <action selector="blogTapped:" destination="9F4-lc-9X6" eventType="touchUpInside" id="c20-vD-ihs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ya-3d-CYQ">
                                 <rect key="frame" x="163.5" y="355" width="48" height="30"/>
                                 <state key="normal" title="Twitter"/>
+                                <connections>
+                                    <action selector="twitterTapped:" destination="9F4-lc-9X6" eventType="touchUpInside" id="NES-aO-6x1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,7 +63,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="u6G-56-1Ee">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="WP8-1R-pjd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="WP8-1R-pjd">
+                            <connections>
+                                <action selector="doneTapped:" destination="9F4-lc-9X6" id="gam-Oz-eLd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uy-Lg-ITm" userLabel="First Responder" sceneMemberID="firstResponder"/>

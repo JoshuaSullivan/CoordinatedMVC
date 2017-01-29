@@ -12,11 +12,10 @@ class HelpCoordinator: TaskCoordinator {
     
     var task: Task { return .help }
     
-    /// The actual view controller we use. This task only has 1 step/view.
-    fileprivate let viewController: UIViewController
+    fileprivate let navController: UINavigationController
     
     var rootViewController: UIViewController {
-        return viewController
+        return navController
     }
     
     var isModalTask: Bool { return true }
@@ -27,7 +26,9 @@ class HelpCoordinator: TaskCoordinator {
         guard let vc = UIStoryboard(name: "Help", bundle: nil).instantiateInitialViewController() as? HelpViewController else {
             preconditionFailure("Help storyboard is misconfigured.")
         }
-        viewController = vc
+        navController = UINavigationController(rootViewController: vc)
+        vc.delegate = self
+        
     }
     
     /// This class has no setup or teardown, so we're just providing empty implementations.
@@ -64,5 +65,9 @@ extension HelpCoordinator: HelpViewControllerDelegate {
         } else {
             app.openURL(url)
         }
+    }
+    
+    func helpViewController(didTapDone helpController: HelpViewController) {
+        delegate?.taskCoordinator(finished: self)
     }
 }

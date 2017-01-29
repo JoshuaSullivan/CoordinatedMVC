@@ -11,6 +11,8 @@ import UIKit
 protocol HelpViewControllerDelegate: class {
     func helpViewController(didTapBlog helpController: HelpViewController)
     func helpViewController(didTapTwitter helpController: HelpViewController)
+    func helpViewController(didTapDone helpController: HelpViewController)
+
 }
 
 class HelpViewController: UIViewController {
@@ -29,5 +31,9 @@ class HelpViewController: UIViewController {
     
     @IBAction fileprivate func twitterTapped(_ sender: Any?) {
         delegate?.helpViewController(didTapTwitter: self)
+    }
+    
+    @IBAction fileprivate func doneTapped(_ sender: Any?) {
+        delegate?.helpViewController(didTapDone: self)
     }
 }
