@@ -14,6 +14,7 @@ class ForecastViewModel {
     
     fileprivate let forecasts: [ForecastDay]
     
+    /// The currently-selected ForecastDay for details purposes.
     var selectedDay: ForecastDay? = nil
     
     init(locationFinder: LocationFinder) {
@@ -40,12 +41,14 @@ class ForecastViewModel {
         }
     }
     
+    /// This particular view model has no tear-down because it doesn't make API or file system requests.
     func prepareForRemoval() {
     }
 }
 
 extension ForecastViewModel: ForecastViewControllerDataSource {
     
+    /// Return the location from the locationFinder.
     func getLocation(completion: @escaping (String) -> Void) {
         locationFinder.getLocation { (placeName) in
             completion(placeName)
@@ -62,6 +65,7 @@ extension ForecastViewModel: ForecastViewControllerDataSource {
 }
 
 extension ForecastViewModel: ForecastDetailsViewControllerDataSource {
+    /// Return the currently-selected ForecastDay.
     var forecast: ForecastDay {
         guard let day = selectedDay else {
             preconditionFailure("Requesting the selected day when none exists.")

@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ForecastCoordinator: TaskCoordinator {
+class ForecastCoordinator: NSObject, TaskCoordinator {
     
     // MARK: - Constants & Child Types
     
+    /// This coordinator has 2 steps.
     fileprivate enum Step {
+        /// The list of all forecasts.
         case summary
+        
+        /// The details on one particular forecast.
         case details
     }
     
@@ -22,12 +26,11 @@ class ForecastCoordinator: TaskCoordinator {
     /// This coordinator handles the forecast task.
     var task: Task { return .forecast }
     
+    /// Returns the navController.
     var rootViewController: UIViewController {
         return navController
     }
-    
-    var isModalTask: Bool { return false }
-    
+        
     weak var delegate: TaskCoordinatorDelegate?
     
     // MARK: - Class-specific Properties
@@ -49,6 +52,8 @@ class ForecastCoordinator: TaskCoordinator {
     init(locationFinder: LocationFinder) {
         navController = UINavigationController()
         viewModel = ForecastViewModel(locationFinder: locationFinder)
+        super.init()
+        navController.delegate = self
     }
     
     /// Do any remaining setup before the coordinator's view appears on stage.
@@ -56,6 +61,7 @@ class ForecastCoordinator: TaskCoordinator {
         show(step: .summary)
     }
     
+    /// Tear down the model.
     func prepareForRemoval() {
         viewModel.prepareForRemoval()
     }
@@ -77,7 +83,6 @@ class ForecastCoordinator: TaskCoordinator {
                 preconditionFailure("Did not get the expected view controller type.")
             }
             vc.dataSource = viewModel
-            vc.delegate = self
             navController.pushViewController(vc, animated: true)
         }
         currentStep = step
@@ -85,19 +90,25 @@ class ForecastCoordinator: TaskCoordinator {
 }
 
 extension ForecastCoordinator: ForecastViewControllerDelegate {
+    /// Move to the details screen.
     func forecastViewController(_ forecastViewController: ForecastViewController, detailsFor day: ForecastDay) {
         viewModel.selectedDay = day
         show(step: .details)
     }
     
+    /// Move to the help task.
     func forecastViewController(didTapHelp forecastViewController: ForecastViewController) {
         delegate?.taskCoordinator(self, changeTask: .help)
     }
 }
 
-extension ForecastCoordinator: ForecastDetailsViewControllerDelegate {
-    func forecastDetails(didTapBack forecastDetails: ForecastDetailsViewController) {
-        navController.popViewController(animated: true)
-        currentStep = .summary
+extension ForecastCoordinator: UINavigationControllerDelegate {
+    
+    /// Observe pop actions to determine when the user leaves the details screen.
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .pop {
+            currentStep = .summary
+        }
+        return nil
     }
 }

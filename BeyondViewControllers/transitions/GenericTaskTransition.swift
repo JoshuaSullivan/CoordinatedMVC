@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// A super-simple transition that simply cross-fades between view controllers.
+/// Feel free to make something more elaborate if your heart tells you it is the right thing to do.
 class GenericTaskTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

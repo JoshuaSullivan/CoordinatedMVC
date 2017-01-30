@@ -8,7 +8,6 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
-
-}
+/// Just a dumb container.
+class RootViewController: UIViewController {}
 

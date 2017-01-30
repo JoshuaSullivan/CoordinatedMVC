@@ -10,8 +10,10 @@ import UIKit
 
 class AppCooordinator {
     
+    /// Store a reference to our dependencies.
     let locationService: LocationService
     
+    /// The root view controller of the app.
     let rootViewController: UIViewController?
     
     /// Target view to place all content within.
@@ -20,6 +22,7 @@ class AppCooordinator {
     /// The currently active task. We always start with .startup.
     var currentTask: Task = .startup
     
+    /// The currently active task.
     var currentCoordinator: TaskCoordinator? = nil
     
     init(rootViewController: UIViewController?, startingTask: Task? = nil) {
@@ -46,6 +49,7 @@ class AppCooordinator {
         }
     }
     
+    /// Used to begin a new task.
     fileprivate func begin(_ task: Task, allowTaskRestart: Bool = false) {
         guard task != .startup else {
             debugPrint("It is not valid to attempt to begin the .startup task.")
@@ -63,6 +67,7 @@ class AppCooordinator {
         currentCoordinator = nextCoordinator
     }
     
+    /// Get the appropriate TaskCoordinator for the respective task.
     fileprivate func coordinator(for task: Task) -> TaskCoordinator {
         let taskCoord: TaskCoordinator
         switch task {
@@ -77,6 +82,8 @@ class AppCooordinator {
         return taskCoord
     }
     
+    /// This method does the actual work of transitioning from one TaskCoordinator's root view controller to another's.
+    /// It's all based on custom UIViewController containment.
     fileprivate func transition(from fromCoordinator: TaskCoordinator?, to toCoordinator: TaskCoordinator, animated: Bool = true, completion:(() -> Void)? = nil) {
         // A full implementation might choose to introduce specialized animated transitions.
         // Prepare the destination Task Coordinator for use.
@@ -136,6 +143,7 @@ class AppCooordinator {
     
     // MARK: - Helper Methods
     
+    /// This method performs the steps for custom containment of view cotnrollers.
     fileprivate func parent(viewController vc: UIViewController, inView: UIView? = nil, useAutoLayout: Bool = false) {
         
         guard
@@ -165,6 +173,7 @@ class AppCooordinator {
         vc.didMove(toParentViewController: rootViewController)
     }
     
+    /// This method unparents a view controller.
     fileprivate func unparent(_ vc: UIViewController) {
         // Standard view controller custom containment implementation.
         vc.willMove(toParentViewController: nil)
@@ -183,14 +192,17 @@ class AppCooordinator {
 }
 
 extension AppCooordinator: TaskCoordinatorDelegate {
+    /// The current task coordinator wants to change tasks.
     func taskCoordinator(_ taskCoordinator: TaskCoordinator, changeTask newTask: Task) {
         begin(newTask)
     }
     
+    /// The current task coordinator has canceled its task.
     func taskCoordinator(canceled taskCoordinator: TaskCoordinator) {
         // Unused in this demo app. Could be used for canceling login or other completion-sensitive tasks.
     }
     
+    /// The task coordinator has reported that it has completed successfully.
     func taskCoordinator(finished taskCoordinator: TaskCoordinator) {
         switch taskCoordinator.task {
         case .help:

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Displays the date, conditions icon and conditions text in the summary collection view.
 class ForecastCollectionViewCell: UICollectionViewCell {
     
     static let Identifier = "forecastCollectionViewCellIdentifier"

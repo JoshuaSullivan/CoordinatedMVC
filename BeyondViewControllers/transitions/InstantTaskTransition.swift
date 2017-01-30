@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// An instantaneous transition for when we want to simply "snap" to the new view.
 class InstantTaskTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

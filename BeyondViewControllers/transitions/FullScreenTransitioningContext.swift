@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A simple transitioning context for doing full-screen transitions.
 class FullScreenTransitioningContext: NSObject, UIViewControllerContextTransitioning {
     
     public typealias TransitionCompletion = (Bool) -> Void

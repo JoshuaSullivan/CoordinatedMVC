@@ -8,7 +8,11 @@
 
 import Swift
 
+/// The result of an asynchronous request.
 public enum Result<SuccessType, ErrorType> {
+    /// The request succeeded.
     case success(SuccessType)
+    
+    /// The request failed.
     case failure(ErrorType)
 }

@@ -13,6 +13,6 @@ protocol LocationFinder {
     /// The closure is guaranteed to return a string.
     typealias RequestCompletion = (String) -> Void
     
-    /// Get the user's location.
+    /// Get the user's location name.
     func getLocation(completion: @escaping RequestCompletion)
 }

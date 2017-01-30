@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// The help coordinator is simpler than the Forecast coordinator: it only has one screen to manage,
+/// so we're not bothering to define a Steps enum.
 class HelpCoordinator: TaskCoordinator {
     
     var task: Task { return .help }
@@ -17,9 +19,7 @@ class HelpCoordinator: TaskCoordinator {
     var rootViewController: UIViewController {
         return navController
     }
-    
-    var isModalTask: Bool { return true }
-    
+        
     weak var delegate: TaskCoordinatorDelegate?
     
     init() {
@@ -39,6 +39,7 @@ class HelpCoordinator: TaskCoordinator {
 }
 
 extension HelpCoordinator: HelpViewControllerDelegate {
+    /// Launch my blog.
     func helpViewController(didTapBlog helpController: HelpViewController) {
         debugPrint("Launch blog.")
         let app = UIApplication.shared
@@ -53,6 +54,7 @@ extension HelpCoordinator: HelpViewControllerDelegate {
         }
     }
     
+    /// Launch my twitter account.
     func helpViewController(didTapTwitter helpController: HelpViewController) {
         debugPrint("Launch twitter.")
         let app = UIApplication.shared
@@ -67,6 +69,7 @@ extension HelpCoordinator: HelpViewControllerDelegate {
         }
     }
     
+    /// Help is done.
     func helpViewController(didTapDone helpController: HelpViewController) {
         delegate?.taskCoordinator(finished: self)
     }

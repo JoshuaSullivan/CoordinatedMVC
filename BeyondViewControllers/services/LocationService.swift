@@ -16,6 +16,7 @@ class LocationService: LocationFinder {
     
     fileprivate var requests: [LocationFinder.RequestCompletion] = []
     
+    /// Return a location name.
     func getLocation(completion: @escaping LocationFinder.RequestCompletion) {
         // Simulate an API delay.
         let deadline = DispatchTime.now() + 0.2
