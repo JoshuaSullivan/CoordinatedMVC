@@ -14,6 +14,9 @@ public enum Task {
     /// The state of the app on cold launch. This task cannot be switched to from another task.
     case startup
     
+    /// Log the user in.
+    case login
+    
     /// Get a current weather forecast.
     case forecast
     

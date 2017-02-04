@@ -21,6 +21,11 @@
 		BC28B7361DF483A0006A5F9F /* FullScreenTransitioningContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B7341DF483A0006A5F9F /* FullScreenTransitioningContext.swift */; };
 		BC28B7371DF483A0006A5F9F /* GenericTaskTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B7351DF483A0006A5F9F /* GenericTaskTransition.swift */; };
 		BC28B7391DF48407006A5F9F /* InstantTaskTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B7381DF48407006A5F9F /* InstantTaskTransition.swift */; };
+		BC619E0B1E46428D00804E68 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC619E0A1E46428D00804E68 /* Login.storyboard */; };
+		BC619E0D1E4648A600804E68 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC619E0C1E4648A600804E68 /* LoginViewController.swift */; };
+		BC619E0F1E46507200804E68 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC619E0E1E46507200804E68 /* ForgotPasswordViewController.swift */; };
+		BC619E111E4668A600804E68 /* UITextField+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC619E101E4668A600804E68 /* UITextField+Errors.swift */; };
+		BC619E131E468B4B00804E68 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC619E121E468B4B00804E68 /* LoginCoordinator.swift */; };
 		BC6360481DCFAC5D00F902A0 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6360471DCFAC5D00F902A0 /* ForecastViewModel.swift */; };
 		BC9DE7911DCD85D60033E3ED /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7901DCD85D60033E3ED /* Result.swift */; };
 		BC9DE7941DCD86B40033E3ED /* TaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */; };
@@ -65,6 +70,11 @@
 		BC28B7341DF483A0006A5F9F /* FullScreenTransitioningContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenTransitioningContext.swift; sourceTree = "<group>"; };
 		BC28B7351DF483A0006A5F9F /* GenericTaskTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTaskTransition.swift; sourceTree = "<group>"; };
 		BC28B7381DF48407006A5F9F /* InstantTaskTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantTaskTransition.swift; sourceTree = "<group>"; };
+		BC619E0A1E46428D00804E68 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		BC619E0C1E4648A600804E68 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BC619E0E1E46507200804E68 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		BC619E101E4668A600804E68 /* UITextField+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Errors.swift"; sourceTree = "<group>"; };
+		BC619E121E468B4B00804E68 /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		BC6360471DCFAC5D00F902A0 /* ForecastViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		BC9DE7901DCD85D60033E3ED /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BC9DE7931DCD86B40033E3ED /* TaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCoordinator.swift; sourceTree = "<group>"; };
@@ -170,6 +180,7 @@
 				BC9DE7971DCD89BA0033E3ED /* AppCoordinator.swift */,
 				BC9DE79B1DCD89D80033E3ED /* ForecastCoordinator.swift */,
 				BC9DE79D1DCD89E00033E3ED /* HelpCoordinator.swift */,
+				BC619E121E468B4B00804E68 /* LoginCoordinator.swift */,
 			);
 			path = coordinators;
 			sourceTree = "<group>";
@@ -177,6 +188,7 @@
 		BC9DE7881DCD858F0033E3ED /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BC619E101E4668A600804E68 /* UITextField+Errors.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -214,6 +226,7 @@
 			children = (
 				BC20FEBD1DCD83DF00DFFBDB /* Main.storyboard */,
 				BC20FEC21DCD83DF00DFFBDB /* LaunchScreen.storyboard */,
+				BC619E0A1E46428D00804E68 /* Login.storyboard */,
 				BC1FAAA01DE1F5CC00340A32 /* Help.storyboard */,
 				BC1FAAA21DE1F5F400340A32 /* Forecast.storyboard */,
 			);
@@ -227,6 +240,8 @@
 				BC1FAA9E1DE13D2400340A32 /* ForecastViewController.swift */,
 				BCB1115C1DEB954C00E5BA93 /* ForecastDetailsViewController.swift */,
 				BC1FAA9C1DE13D1600340A32 /* HelpViewController.swift */,
+				BC619E0C1E4648A600804E68 /* LoginViewController.swift */,
+				BC619E0E1E46507200804E68 /* ForgotPasswordViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -350,6 +365,7 @@
 			files = (
 				BC20FEC41DCD83DF00DFFBDB /* LaunchScreen.storyboard in Resources */,
 				BC1FAAA31DE1F5F400340A32 /* Forecast.storyboard in Resources */,
+				BC619E0B1E46428D00804E68 /* Login.storyboard in Resources */,
 				BC20FEC11DCD83DF00DFFBDB /* Assets.xcassets in Resources */,
 				BC20FEBF1DCD83DF00DFFBDB /* Main.storyboard in Resources */,
 				BC1FAAA11DE1F5CC00340A32 /* Help.storyboard in Resources */,
@@ -371,6 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC9DE7981DCD89BA0033E3ED /* AppCoordinator.swift in Sources */,
+				BC619E0F1E46507200804E68 /* ForgotPasswordViewController.swift in Sources */,
+				BC619E111E4668A600804E68 /* UITextField+Errors.swift in Sources */,
 				BCA0CBD81E21563700D1BFAB /* ForecastCollectionViewCell.swift in Sources */,
 				BC140B2D1E3E584100D55BE8 /* GlobalDeclarations.swift in Sources */,
 				BCB1115D1DEB954C00E5BA93 /* ForecastDetailsViewController.swift in Sources */,
@@ -380,10 +398,12 @@
 				BCB111591DEB557B00E5BA93 /* ForecastDay.swift in Sources */,
 				BC28B7391DF48407006A5F9F /* InstantTaskTransition.swift in Sources */,
 				BC20FEBC1DCD83DF00DFFBDB /* RootViewController.swift in Sources */,
+				BC619E0D1E4648A600804E68 /* LoginViewController.swift in Sources */,
 				BC6360481DCFAC5D00F902A0 /* ForecastViewModel.swift in Sources */,
 				BCB111541DEB468200E5BA93 /* LocationService.swift in Sources */,
 				BC1FAA9D1DE13D1600340A32 /* HelpViewController.swift in Sources */,
 				BC9DE7961DCD87170033E3ED /* Task.swift in Sources */,
+				BC619E131E468B4B00804E68 /* LoginCoordinator.swift in Sources */,
 				BCB1115B1DEB590F00E5BA93 /* JSONConvertible.swift in Sources */,
 				BC28B7371DF483A0006A5F9F /* GenericTaskTransition.swift in Sources */,
 				BC20FEBA1DCD83DF00DFFBDB /* AppDelegate.swift in Sources */,
