@@ -213,6 +213,8 @@ extension AppCooordinator: TaskCoordinatorDelegate {
         switch taskCoordinator.task {
         case .help:
             begin(.forecast)
+        case .login:
+            begin(.forecast)
         default:
             assertionFailure("The task '\(taskCoordinator.task)' is not handled for completion.")
         }

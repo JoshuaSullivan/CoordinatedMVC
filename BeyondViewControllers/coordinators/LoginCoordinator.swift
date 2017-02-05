@@ -94,10 +94,8 @@ class LoginCoordinator: TaskCoordinator {
 
 extension LoginCoordinator: LoginViewControllerDelegate {
     func loginController(login loginController: LoginViewController, email: String, password: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            UserDefaults.standard.set(true, forKey: UserDefaultsKeys.didLogin)
-            self.delegate?.taskCoordinator(finished: self)
-        }
+        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.didLogin)
+        self.delegate?.taskCoordinator(finished: self)
     }
     
     func loginController(forgotPassword loginController: LoginViewController) {
