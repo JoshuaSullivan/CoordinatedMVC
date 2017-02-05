@@ -40,6 +40,10 @@ class LoginCoordinator: TaskCoordinator {
     
     var currentStep: Step? = nil
     
+    init() {
+        navController = UINavigationController()
+    }
+    
     func begin() {
         show(step: .login)
     }
@@ -53,6 +57,7 @@ class LoginCoordinator: TaskCoordinator {
     }
     
     fileprivate func show(step: Step) {
+        defer { currentStep = step }
         guard currentStep != nil else {
             let vc = viewController(for: step)
             navController.setViewControllers([vc], animated: false)
@@ -89,7 +94,8 @@ class LoginCoordinator: TaskCoordinator {
 
 extension LoginCoordinator: LoginViewControllerDelegate {
     func loginController(login loginController: LoginViewController, email: String, password: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            UserDefaults.standard.set(true, forKey: UserDefaultsKeys.didLogin)
             self.delegate?.taskCoordinator(finished: self)
         }
     }
@@ -102,11 +108,10 @@ extension LoginCoordinator: LoginViewControllerDelegate {
 extension LoginCoordinator: ForgotPasswordViewControllerDelegate {
     func forgotPasswordController(resetPassword fpController: ForgotPasswordViewController, for email: String) {
         let alert = UIAlertController(title: "Email Sent", message: "We've sent an email to the provided address with instructions about how to reset your password. (Not really!)", preferredStyle: .alert)
-        let btn = UIAlertAction(title: "Okay", style: .cancel) {
+        let btn = UIAlertAction(title: "Okay", style: .default) {
             action in
-            fpController.dismiss(animated: true, completion: { 
-                self.show(step: .login)
-            })
+            fpController.dismiss(animated: true, completion: nil)
+            self.show(step: .login)
         }
         alert.addAction(btn)
         fpController.present(alert, animated: true, completion: nil)

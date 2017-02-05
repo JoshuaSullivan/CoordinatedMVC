@@ -25,6 +25,10 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
         
     @IBAction fileprivate func resetTapped(sender: Any?) {
+        doPasswordReset()
+    }
+    
+    func doPasswordReset() {
         let email = emailField.text ?? ""
         guard !email.isEmpty else {
             emailField.set(isError: true)
@@ -38,6 +42,7 @@ class ForgotPasswordViewController: UIViewController {
 extension ForgotPasswordViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        doPasswordReset()
         return false
     }
 }

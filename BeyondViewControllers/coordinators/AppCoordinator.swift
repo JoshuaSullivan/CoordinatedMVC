@@ -45,7 +45,11 @@ class AppCooordinator {
         if let task = startingTask {
             begin(task)
         } else {
-            begin(.forecast)
+            if let _ = UserDefaults.standard.object(forKey: UserDefaultsKeys.didLogin) {
+                begin(.forecast)
+            } else {
+                begin(.login)
+            }
         }
     }
     
@@ -75,6 +79,8 @@ class AppCooordinator {
             taskCoord = ForecastCoordinator(locationFinder: locationService)
         case .help:
             taskCoord = HelpCoordinator()
+        case .login:
+            taskCoord = LoginCoordinator()
         default:
             preconditionFailure("Unknown or invalid task \(task).")
         }

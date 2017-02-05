@@ -43,10 +43,8 @@ class LoginViewController: UIViewController {
         emailField.set(isError: !emailIsValid)
         passwordField.set(isError: !passwordIsValid)
         guard emailIsValid, passwordIsValid else {
-            signInButton.isEnabled = false
             return false
         }
-        signInButton.isEnabled = true
         return true
     }
     
@@ -69,10 +67,6 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        validateFields()
-        return true
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailField {

@@ -13,3 +13,7 @@ let forecastDateFormatter: DateFormatter = {
     df.dateFormat = DateFormatter.dateFormat(fromTemplate: "MMdd", options: 0, locale: Locale.current)
     return df
 }()
+
+enum UserDefaultsKeys {
+    static let didLogin = "didLoginKey"
+}
